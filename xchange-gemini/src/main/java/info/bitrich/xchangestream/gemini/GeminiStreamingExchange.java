@@ -29,12 +29,12 @@ public class GeminiStreamingExchange extends GeminiExchange implements Streaming
 
     @Override
     public Completable connect(ProductSubscription... args) {
-        return Completable.create(CompletableEmitter::onComplete);
+        return streamingService.connect();
     }
 
     @Override
     public Completable disconnect() {
-        return Completable.create(CompletableEmitter::onComplete);
+        return streamingService.disconnect();
     }
 
     @Override
